@@ -1,0 +1,317 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Algorithm Visualizer</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+
+  <div class="home">
+    <a href="sorting.html"><i class="fa fa-home"></i>Sorting Visualizer</a>
+  </div>
+
+    <div class="menu" id="menu">
+<div class="menuBtn" onclick="myMenu()"><i class="fa fa-bars"></i></div></div>
+
+<header class="myhead" id="myheader">
+<nav class="navbar" id="nav">
+
+
+  <!--<div class="page-wrapper">
+  <div class="container"></div>-->
+
+  <div class="buttons" id="button">
+<li><button class="btn1" onclick="generate()"id="btn1">Generate new array</button></li>
+
+<li class="slider">
+               <div class="speed-size">
+                 <label for="speed">Speed</label>
+                 <input type="range" id="speed" class="slider" min="10" max="500" value="40">
+               
+
+                <label for="arraySizeSliderElement">Array size</label>
+                <input type="range" min="4" max="200" value="150" class="slider" id="arraySizeSliderElement">
+              </div>
+</li>
+
+
+<li class="dropdown">
+    <button class="dropbtn">Algorithms
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="algo">
+      <option id="bubble">Bubble Sort</option>
+      <option id="select">Selection Sort</option>
+      <option id="insertion">Insertion Sort</option>
+      <option id="merge">Merge Sort</option>
+      <option id="quick">Quick Sort</option>
+    </div>
+  </li>
+
+</div>
+
+
+</nav>
+</header>
+
+
+<div class="page-wrapper" id="page-wrapper">
+  <div class="container" id="container"></div>
+<!--<button class="btn2" id="btn2">Bubble Sort</button>-->
+<div class="play-pause" id="play-pause">
+        <button class="pause" id="pause"><i class="fa fa-play"></i></button>
+        <button class="stop"id="stop"><i class="fa fa-stop-circle"></i></button>
+</div>
+</div>
+
+<div class="output">Output
+<p id="out"></p> </div>
+
+<div class="analyze">
+  <table class="analyzer">
+    <tr>
+    <th>Algorithm</th>
+    <th colspan="3">Time Complexity</th>
+    <th>Space Complexity</th>
+    <th>Stable</th>
+    <th>In-place</th>
+  </tr>
+  <tr>
+    <th></th>
+    <th>Best Case</th>
+    <th>Average Case</th>
+    <th>Worst Case</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  
+
+    <tr id="bSV">
+    <th>Bubble Sort</th>
+    <td>O(N)</td>
+    <td>O(N^2)</td>
+    <td>O(N^2)</td>
+    <td>O(1)</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    </tr>
+    <tr id="sSV">
+      <th>Selection Sort</th>
+      <td>O(N^2)</td>
+      <td>O(N^2)</td>
+      <td>O(N^2)</td>
+      <td>O(1)</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr id="iSV">
+      <th>Insertion Sort</th>
+      <td>O(N)</td>
+      <td>O(N^2)</td>
+      <td>O(N^2)</td>
+      <td>O(1)</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr id="mSV">
+      <th>Merge Sort</th>
+      <td>O(NlogN)</td>
+      <td>O(NlogN)</td>
+      <td>O(NlogN)</td>
+      <td>O(N)</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr id="qSV">
+      <th>Quick Sort</th>
+      <td>O(NlogN)</td>
+      <td>O(NlogN)</td>
+      <td>O(N^2)</td>
+      <td>O(N)</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+
+  </table>
+</div>
+<div class="des">
+
+  <table class="bs" id="bs">
+
+  <th>Bubble Sort</th>
+  <tr><td>Bubble sort proceeds by scanning the list and exchanging the adjacent elements if they are out of order with respect to each other. It compares each element with its adjacent elements and swaps them if they are not in order.</td></tr>
+
+  <tr><th>End results</th></tr>
+  <tr><td>After each pass the next larger element will be moved to the end of list and placed at its proper position.</td></tr>
+
+  <tr><th>Pseudo Code</th></tr>
+  <tr>
+    <td><pre>for(int i=0;i< n-1;i++)</pre></td></tr>
+    <tr><td><pre>{</pre></td></tr>
+    <tr><td><pre>   flag=0;</pre></td></tr>
+    <tr><td><pre>   for(int j=0;j< n-i-1;j++)</pre></td></tr>
+    <tr><td><pre>   {</pre></td></tr>
+    <tr><td><pre>       if(arr[j]>arr[j+1])</pre></td></tr>
+    <tr><td><pre>       {</pre></td></tr>
+    <tr><td><pre>          swap(arr[j],arr[j+1])</pre></td></tr>
+    <tr><td><pre>          flag=1;</pre></td></tr>
+    <tr><td><pre>       }</pre></td></tr>
+    <tr><td><pre>    }</pre></td></tr>
+    <tr><td><pre>   if(flag==0)break;</pre></td></tr>
+    <tr><td><pre>}</pre></td></tr>
+  
+</table>
+</div>
+
+<div class="des">
+<table class="ss" id="ss">
+
+  <th>Selection Sort</th>
+  <tr><td>Selection sort is a sorting algorithm that works by selecting the smallest element from an unsorted list in each iteration and places it at its correct position.</td></tr>
+
+  <tr><th>End results</th></tr>
+  <tr><td>After each pass the next smaller element will be moved to the front of list and placed at its proper position.</td></tr>
+
+  <tr><th>Pseudo Code</th></tr>
+  <tr><td><pre>for(int i=0;i< n-1;i++)</pre></td></tr>
+  <tr><td><pre>{</pre></td></tr>
+  <tr><td><pre>   k=i;</pre></td></tr>
+  <tr><td><pre>   for(int j=i+1;j< n;j++)</pre></td></tr>
+  <tr><td><pre>   {</pre></td></tr>
+  <tr><td><pre>      if(arr[j]< arr[k])</pre></td></tr>
+  <tr><td><pre>         k=j;</pre></td></tr>
+  <tr><td><pre>   }</pre></td></tr>
+  <tr><td><pre>   if(i!=k)</pre></td></tr>
+  <tr><td><pre>     swap(arr[i],arr[k]);</pre></td></tr>
+  <tr><td><pre>}</pre></td></tr>
+</table>
+</div>
+
+
+<div class="des">
+<table class="is" id="is">
+
+  <th>Insertion Sort</th>
+  <tr><td>Insertion sort proceeds by placing the element at its proper place in sorted list. The list is considered to be divided into two parts- sorted & unsorted. In each pass the first element in the unsorted list is taken and is placed at its correct place in the sorted list.</td></tr>
+
+  <tr><th>End results</th></tr>
+  <tr><td>If there are n elements in the list, then after n-1 passes the unsorted part disappears and our whole list becomes sorted.</td></tr>
+
+  <tr><th>Pseudo Code</th></tr>
+  <tr><td><pre>for(int i=1;i< n;i++)</pre></td></tr>
+  <tr><td><pre>{</pre></td></tr>
+  <tr><td><pre>   k=arr[i];</pre></td></tr>
+  <tr><td><pre>   for(int j=i-1;j>=0&&k< arr[j];j--)</pre></td></tr>
+  <tr><td><pre>      arr[j+1]=arr[j];</pre></td></tr>
+  <tr><td><pre>   arr[j+1]=k;</pre></td></tr>
+  <tr><td><pre>}</pre></td></tr>    
+</table>
+</div>
+
+
+<div class="des">
+<table class="ms" id="ms">
+
+  <th>Merge Sort</th>
+  <tr><td>The algorithm is based on the divide & conquer technique. The list is recursively divided till we get single element lists and then lists are merged repeatedly till we get a single sorted list.<br>
+    ->List divided into two sublists of almost equal size<br>->Left sublist sorted recursively<br>
+  ->Right sublist sorted recursively<br>->the two sorted sublists are merged</td></tr>
+
+  <tr><th>End results</th></tr>
+  <tr><td>n elements can be repeatedly divided into half approximately log<sub>2</sub>n times, so after halving list log<sub>2</sub>n times we get n sublists of size 1. In each pass n elements will be merged so the overall performance of merge sort is O(NlogN)</td></tr>
+
+  <tr><th>Pseudo Code</th></tr>
+  <tr><td><pre>mergeSort(int arr[],int l,int h)</pre></td></tr>
+  <tr><td><pre>{</pre></td></tr>
+  <tr><td><pre>          int temp[MAX];</pre></td></tr>
+  <tr><td><pre>          if(l< h)</pre></td></tr>
+  <tr><td><pre>          {</pre></td></tr>
+  <tr><td><pre>            int mid=(l+h)/2;</pre></td></tr>
+  <tr><td><pre>            mergeSort(arr,l,mid);</pre></td></tr>
+  <tr><td><pre>            mergeSort(mid+1,up);</pre></td></tr>
+  <tr><td><pre>            sortedMerge(arr,temp,l,h);</pre></td></tr>
+  <tr><td><pre>          }</pre></td></tr>
+  <tr><td><pre>}</pre></td></tr>
+  <br>
+  <tr><td><pre>sortedMerge(int arr[],int temp[],int l,int h)</pre></td></tr>
+  <tr><td><pre>{</pre></td></tr>
+  <tr><td><pre>           int mid=(l+h)/2;</pre></td></tr>
+  <tr><td><pre>           int i=l;</pre></td></tr>
+  <tr><td><pre>           int j=mid+1;</pre></td></tr>
+  <tr><td><pre>           int k=l;</pre></td></tr>
+  <tr><td><pre>           while(i<=mid&&j<=h)</pre></td></tr>
+  <tr><td><pre>           {</pre></td></tr>
+  <tr><td><pre>                if(arr[i]< arr[j])</pre></td></tr>
+  <tr><td><pre>                  temp[k++]=arr[i++];</pre></td></tr>
+  <tr><td><pre>                else</pre></td></tr>
+  <tr><td><pre>                  temp[k++]=arr[j++];</pre></td></tr>
+  <tr><td><pre>           }</pre></td></tr>
+  <tr><td><pre>           while(i<=mid)</pre></td></tr>
+  <tr><td><pre>                temp[k++]=arr[i++];</pre></td></tr>
+  <tr><td><pre>           while(j<=h)</pre></td></tr>
+  <tr><td><pre>                temp[k++]=arr[j++];</pre></td></tr>
+  <tr><td><pre>           for(i=l;i<=h;i++)</pre></td></tr>
+  <tr><td><pre>              arr[i]=temp[i];</pre></td></tr>
+  <tr><td><pre>}</pre></td></tr>
+</table>
+</div>
+
+
+
+<div class="des">
+<table class="qs" id="qs">
+
+  <th>Quick Sort</th>
+  <tr><td>QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot.Target of partitions is, given an array and an element x of array as pivot, put x at its correct position in sorted array and put all smaller elements (smaller than x) before x, and put all greater elements (greater than x) after x. </td></tr>
+
+  <tr><th>End results</th></tr>
+  <tr><td>n elements can be repeatedly divided into half approximately log<sub>2</sub>n times, so after halving the list log<sub>2</sub>n times we get n sublists of size 1.</td></tr>
+  <tr><th>Pseudo Code</th></tr>
+  <tr><td><pre>quickSort(arr[], low, high)</pre></td></tr>
+  <tr><td><pre>{</pre></td></tr>
+  <tr><td><pre>         if (low < high)</pre></td></tr>
+  <tr><td><pre>         {</pre></td></tr>
+  <tr><td><pre>            pi = partition(arr, low, high);</pre></td></tr>
+  <tr><td><pre>            quickSort(arr, low, pi - 1);</pre></td></tr>
+  <tr><td><pre>            quickSort(arr, pi + 1, high);</pre></td></tr>
+  <tr><td><pre>         }</pre></td></tr>
+  <tr><td><pre>}</pre></tr></td>
+  <br>
+  <tr><td><pre>partition (arr[], low, high)</pre></td></tr>
+  <tr><td><pre>{</pre></td></tr>
+  <tr><td><pre>           pivot = arr[high];</pre></td></tr>
+  <tr><td><pre>           i = (low - 1)</pre></td></tr>
+  <tr><td><pre>           for (j = low; j <= high- 1; j++)</pre></td></tr>
+  <tr><td><pre>           {</pre></td></tr>
+  <tr><td><pre>               if (arr[j] < pivot)</pre></td></tr>
+  <tr><td><pre>               {</pre></td></tr>
+  <tr><td><pre>               i++;</pre></td></tr>
+  <tr><td><pre>               swap arr[i] and arr[j]</pre></td></tr>
+  <tr><td><pre>               }</pre></td></tr>
+  <tr><td><pre>           }</pre></td></tr>
+  <tr><td><pre>           swap arr[i + 1] and arr[high])</pre></td></tr>
+  <tr><td><pre>           return (i + 1);</pre></td></tr>
+  <tr><td><pre>}</pre></td></tr>
+  
+</table>
+</div>
+
+<footer>Made by V V Mansi</footer>
+
+
+
+</body>
+<script src="js/main.js"></script>
+<script src="js/algorithms.js"></script>
+</script>
+</html>
